@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gio Hàng</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Latest compiled and minified CSS & JS -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Link CSS -->
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+</head>
+<body>
+	<div id="giohang">
+		<div class="container-fluid">
+			<h2>Giỏ Hàng</h2>
+			<div class="row" style="border-top: 7px solid red; background-color: gray">
+				<div class="col-1"></div>
+				<div class="col-6 mt-3 mb-3" style="font-size: 20px">"Nho mỹ" đã được thêm vào giỏ hàng</div>
+				<div class="col-4 mt-3 mb-3">
+					<div class="btn btn-light"><strong>Tiếp tục xem sản phẩm</strong></div>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-3" style="position: relative;">
+			<div class="row">
+
+				<div class="col-1"></div>
+				<div class="col-1"></div>
+				<div class="col-3">Sản phẩm</div>
+				<div class="col-2">Giá</div>
+				<div class="col-2">Số Lượng</div>
+				<div class="col-3">Tổng</div>
+
+			</div>
+			<div class="row">
+				<div class="col-1"><p class="text-danger"></p></div>
+				<div class="col-1">
+					<img id="img1" src="./image/nho.jpg" style="width: 100%;
+					height: 80%;">
+				</div>
+				<div class="col-3">
+					<p>Nho mỹ</p>
+				</div>
+				<div class="col-2 p-0">
+					<input type="text" name="gia" id="gia" disabled="true" value="120000" class="form-control" style="text-align: center; height: 100%">
+				</div>
+				<div class="col-2">
+					<input type="text" name="soluong" id="soluong" style="width:50%;text-align: center;">
+				</div>
+				<div class="col-3 p-0">
+					<p id="tong"></p></div>
+				</div>
+				<div class="row">
+					<div class="col-1"><p class="text-danger"></p></div>
+					<div class="col-1">
+						<img id="img2" src="./image/tao.jpg" style="width: 100%;
+						height: 80%;">
+					</div>
+					<div class="col-3">
+						<p>Táo </p>
+					</div>
+					<div class="col-2 p-0">
+						<input type="text" value="200000" name="giaa" id="giaa" disabled="true" class="form-control" style="text-align: center; height: 100%">
+					</div>
+					<div class="col-2">
+						<input type="text" name="soluong" id="soluongg" style="width:50%;text-align: center;">
+					</div>
+					<div class="col-3 p-0">
+						<p id="tongg"></p></div>
+					</div>
+					<div class="row mt-3">
+			<!-- <input type="text" id="mauudai" name="mauudai" placeholder="Mã ưu đãi" style="width: 100px;">
+			<strong>Ưu đãi:</strong>
+			<div class="btn btn-success" onclick="getUudai()">Áp dụng</div> -->
+			<div class="btn btn-danger ml-3" onclick="capnhat()" >Cập nhật nhỏ hàng</div>
+		</div>
+		
+		<div class="row mt-2">
+			<div class="card">
+				<div class="card-header">
+					<p class="text-warning" style="font-weight: bold; font-size: 25px; text-decoration: underline;">Cộng giỏ hàng</p>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6" style="font-weight: bold;">Tạm tính:</div>
+						<div class="col-6 p-0">
+							<p id="tamtinh" style="color: green;text-align: center; line-height: 44px;"></p>
+						</div>
+						<div class="col-6" style="font-weight: bold;">Tổng:</div>
+						<div class="col-6 p-0">
+							<p id="tongtien" style="color: red;text-align: center; line-height: 44px;"></p>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<a href="#" class="btn btn-danger form-control" onclick="quatrang()">Tiến Hành Thanh Toán</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>s
+<div id="thongtin" style="display: none;">
+	<div class="container-fluid">
+		<p>Đặt mua mẫu: <strong class="text-danger">A01</strong></p>
+		<div class="row">
+			<div class="col-3">
+				<p><p class="btn btn-danger">1</p> Nhập thông tin khách hàng:</p>
+				<form name="frm">
+					<input type="text" class="form-control mb-3" name="hoten" id="hoten" placeholder="*Họ và tên">
+					<input type="text" class="form-control mb-3" name="dienthoai" id="dienthoai" placeholder="*Điện Thoại">
+					<input type="text" class="form-control mb-3" name="email" id="email" placeholder="*Email">
+					<input type="text" class="form-control mb-3" name="diachi" id="diachi" placeholder="Địa Chỉ">
+					<textarea rows="4" class="form-control mb-3" cols="40" name="ghichu" placeholder="Ghi chú"></textarea>
+				</form>
+			</div>
+			<div class="col-5">
+				<p><p class="btn btn-danger">2</p> Chọn hình thức thanh toán:</p>
+				<select id="selecttt" class="form-control" onchange="select()">
+					<option>Chọn hình thức thanh toán</option>
+					<option value="1">Internet Banking/ATM nội địa (giảm 5%)</option>
+					<option value="2">Thanh toán qua thẻ ngân hàng (giảm 10%)</option>
+					<option value="3">Nhận hàng rồi thanh toán ( giảm 0%)</option>
+				</select>
+				<p id="display" class="mt-3"></p>
+			</div>
+			<div class="col-4">
+				<p><p class="btn btn-danger" onclick="capnhat()">3</p> Xem lại đơn hàng:</p>
+				<div class="card">
+					<div class="card-header">
+						<div class="row">
+							<!-- <div class="col-3"></div>
+							<div class="col-5">
+								<p>Mẫu hàng AT01</p>
+							</div>
+							<div class="col-4">
+								<p id="mauhang"></p>
+							</div> -->
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>Image</th>
+										<th>Sản phẩm</th>
+										<th>Giá</th>
+										<th>Số lượng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img id="img_1" src="image/nho.jpg" style="width: 70%"></td>
+										<td>Nho Mỹ</td>
+										<td id="gia1"></td>
+										<td id="sl1"></td>
+									</tr>
+									<tr>
+										<tr>
+											<td><img id="img_2" src="image/tao.jpg" style="width: 70%"></td>
+											<td>Táo Pháp</td>
+											<td id="gia2"></td>
+											<td id="sl2"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-4">
+									<p>Nhập Mã Giảm Giá</p>
+								</div>
+								<div class="col-4">
+									<input class="form-control" type="text" name="mauudai">
+								</div>
+								<div class="col-3 btn btn-danger" style="height: 80%" onclick="khuyenmai()">Áp dụng</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-6"><p>Tạm tính:</p></div>
+								<div class="col-6"><p id="tamtinhh">đ</p></div>
+							</div>
+							<div class="row">
+								<div class="col-6"><p>Giảm giá</p></div>
+								<div class="col-6"><p class="text-danger" id="giamgia"></p></div>
+							</div>
+						</div>
+						<div class="card-footer">
+							<div class="row">
+								<div class="col-6">
+									<strong class="text-uppercase">Tổng cộng:</strong>
+								</div>
+								<div class="col-6">
+									<!-- <p class="text-success" id="tongtien">2.520.000 đ</p> -->
+									<input type="text" class="form-control" disabled id="tongtienn" name="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn btn-danger form-control mt-3" onclick="banhang()">ĐẶT HÀNG</div>
+				</div>
+
+			</div>
+			<div id="thongtin">
+				<p style="font-weight: bold; text-decoration: underline;" class="text-danger">THÔNG TIN HÓA ĐƠN</p>
+				<p id="showtt"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
