@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<HTML><body>
+    <input
+    <p id="demo"></p>
+
+    <script language ="javascript">
+       /* var date = new Date();
+        var a= new Date( prompt("nhap vao ngay thang nam sinh cua ban : ","0"));
+        document.getElementById("demo").innerHTML = "em sinh vào ngay"+a.getDate()+" tháng :"+a.getMonth()+ "năm" +a.getFullYear() +
+        "hom nay em duoc "+ (2020-a.getFullYear() ) + date;
+        var a=parseInt(prompt("nhap so ngay ở : ","0"));
+        var c=parseInt(prompt("nhap don giá ngay : ","0"));
+        var d=parseInt(prompt("nhap don giá tuan  : ","0"));
+        var e=parseInt(prompt("nhap don giá  thang : ","0"));
+        var th= Math.floor(a/30);
+
+           var b=a%30;
+           var t= Math.floor(b/7);
+           var n=b%7;
+            
+           var tien=(th*c) + (t*d) + (n*e);
+           document.getElementById("demo").innerHTML = "tien =" +tien;*/
+            var so=(prompt("nhap vào mot  so nguyen : ","0"));
+            if((so)==parseFloat(so)){
+                if(parseFloat(so)==0){
+                    document.getElementById("demo").innerHTML =so+" là số không thuộc nguyên dương và nguyên âm";
+                }
+                else{
+                    if(parseFloat(so)>0){ 
+                        document.getElementById("demo").innerHTML =so+" là số dương";
+                }
+            else
+            document.getElementById("demo").innerHTML = so+" là số âm";
+        }
+            }else
+            document.getElementById("demo").innerHTML = so+" không phải là số";
+
+    </script>
+    </body>
+    </HTML>
